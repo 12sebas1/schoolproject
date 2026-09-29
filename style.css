@@ -1,6 +1,62 @@
+.body {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #ffffff;
+}
+
+.body h1 {
+    grid-column: 1 / -1;
+}
+
 .card {
     border: 3px solid #000000;
-    margin: 10px;
     padding: 10px;
-    width: 400px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .body {
+        grid-template-columns: 1fr;
+    }
+}
+
+.schoolplaat-detail {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.schoolplaat-detail .card {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.schoolplaat-detail .card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
